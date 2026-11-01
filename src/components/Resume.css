@@ -1,0 +1,55 @@
+/* ═══════════════════════════════════════
+   Resume
+   ═══════════════════════════════════════ */
+
+.resume__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.resume__title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.resume__title em {
+  font-style: italic;
+  color: var(--vermilion);
+}
+
+.resume__action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
+  padding-top: 12px;
+}
+
+.resume__text {
+  flex-basis: 100%;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--grey);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .resume__content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .resume__text {
+    font-size: 16px;
+  }
+
+  .resume__action .button {
+    width: 100%;
+    justify-content: center;
+  }
+}

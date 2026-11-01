@@ -1,0 +1,179 @@
+/* ═══════════════════════════════════════
+   Navbar
+   ═══════════════════════════════════════ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: padding 0.3s var(--ease-out);
+}
+
+/* Frosted background lives on a pseudo-element so the fixed mobile
+   overlay is never clipped by a backdrop-filter containing block. */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(244, 240, 232, 0);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.navbar--scrolled {
+  padding: 14px 0;
+}
+
+.navbar--scrolled::before {
+  background-color: rgba(244, 240, 232, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--divider);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ─── Logo / Initials ─── */
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  font-style: italic;
+  position: relative;
+  z-index: 102;
+}
+
+.navbar__logo:focus-visible {
+  outline: 2px solid var(--vermilion);
+  outline-offset: 4px;
+}
+
+/* ─── Links ─── */
+.navbar__links {
+  display: flex;
+  gap: 28px;
+}
+
+.navbar__links a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--grey);
+  transition: color 0.25s;
+  position: relative;
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--vermilion);
+  transition: width 0.3s var(--ease-out);
+}
+
+.navbar__links a:hover {
+  color: var(--black);
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+.navbar__links a:focus-visible {
+  outline: 2px solid var(--vermilion);
+  outline-offset: 4px;
+}
+
+/* ─── Mobile Toggle ─── */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 8px;
+  position: relative;
+  z-index: 102;
+}
+
+.navbar__toggle:focus-visible {
+  outline: 2px solid var(--vermilion);
+  outline-offset: 2px;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--black);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.navbar__toggle.active span:first-child {
+  transform: translateY(3.75px) rotate(45deg);
+}
+
+.navbar__toggle.active span:last-child {
+  transform: translateY(-3.75px) rotate(-45deg);
+}
+
+/* ─── Tablet & Mobile: full-screen menu ─── */
+@media (max-width: 1024px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: fixed;
+    inset: 0;
+    z-index: 101;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 80px 24px 40px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.3s var(--ease-out),
+      visibility 0s linear 0.3s;
+  }
+
+  .navbar__links--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.3s var(--ease-out);
+  }
+
+  .navbar__links a {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--black);
+  }
+
+  .navbar__links a::after {
+    bottom: 2px;
+    background: var(--vermilion);
+  }
+}

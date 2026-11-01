@@ -1,0 +1,254 @@
+/* ═══════════════════════════════════════
+   Hero
+   ═══════════════════════════════════════ */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+.hero__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ─── Label ─── */
+.hero__label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: heroFadeIn 0.8s var(--ease-out) 0.2s both;
+}
+
+.hero__number {
+  color: var(--vermilion);
+}
+
+/* ─── Headline ─── */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 10vw, 132px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 48px;
+  animation: heroFadeIn 0.8s var(--ease-out) 0.4s both;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--vermilion);
+}
+
+/* ─── Content Row ─── */
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+  max-width: 900px;
+  animation: heroFadeIn 0.8s var(--ease-out) 0.6s both;
+}
+
+.hero__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--grey);
+  max-width: 440px;
+}
+
+/* ─── CTA Buttons ─── */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--black);
+  color: var(--ivory);
+  padding: 16px 32px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background 0.3s var(--ease-out),
+    gap 0.3s var(--ease-out);
+}
+
+.hero__cta:hover {
+  background: var(--vermilion);
+  gap: 20px;
+}
+
+.hero__cta:focus-visible {
+  outline: 2px solid var(--vermilion);
+  outline-offset: 4px;
+}
+
+.hero__cta-arrow {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.hero__cta:hover .hero__cta-arrow {
+  transform: translateX(4px);
+}
+
+.hero__link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--grey);
+  position: relative;
+  transition: color 0.25s;
+}
+
+.hero__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--grey);
+  transition:
+    background 0.3s;
+}
+
+.hero__link:hover {
+  color: var(--black);
+}
+
+.hero__link:hover::after {
+  background: var(--black);
+}
+
+.hero__link:focus-visible {
+  outline: 2px solid var(--vermilion);
+  outline-offset: 4px;
+}
+
+/* ─── Scroll Hint ─── */
+.hero__scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  opacity: 0.5;
+  animation: heroFadeIn 0.8s var(--ease-out) 1s both;
+}
+
+.hero__scroll-line {
+  height: 1px;
+  width: 60px;
+  background: var(--grey);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--vermilion);
+  animation: scrollLine 2s var(--ease-in-out) infinite;
+}
+
+/* ─── Keyframes ─── */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__label,
+  .hero__title,
+  .hero__content,
+  .hero__scroll-hint {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero__scroll-line::after {
+    animation: none;
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 140px;
+    padding-bottom: 40px;
+  }
+
+  .hero__content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero__description {
+    font-size: 16px;
+  }
+
+  .hero__actions {
+    gap: 20px 28px;
+  }
+
+  .hero__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__scroll-hint {
+    margin-top: 48px;
+  }
+}

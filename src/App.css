@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════
+   App — Minimal global layout styles.
+   Component-specific styles live in each
+   component's own CSS file.
+   ═══════════════════════════════════════ */
+
+main {
+  display: flex;
+  flex-direction: column;
+}

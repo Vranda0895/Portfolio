@@ -1,0 +1,62 @@
+/* ═══════════════════════════════════════
+   Skills
+   ═══════════════════════════════════════ */
+
+.skills__groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--divider);
+}
+
+.skills__group {
+  padding: 40px 32px 40px 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.skills__group:nth-child(even) {
+  padding-left: 32px;
+  padding-right: 0;
+  border-left: 1px solid var(--divider);
+}
+
+.skills__group-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vermilion);
+  margin-bottom: 24px;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+
+.skills__item {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  transition: color 0.3s;
+}
+
+.skills__item:hover {
+  color: var(--vermilion);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .skills__groups {
+    grid-template-columns: 1fr;
+  }
+
+  .skills__group,
+  .skills__group:nth-child(even) {
+    padding: 28px 0;
+    border-left: none;
+  }
+}

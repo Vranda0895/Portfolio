@@ -1,0 +1,156 @@
+/* ═══════════════════════════════════════
+   Projects
+   ═══════════════════════════════════════ */
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* ─── Project Card ─── */
+.project-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  padding: 56px 0;
+  border-top: 1px solid var(--divider);
+}
+
+/* ─── Number Column ─── */
+.project-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.project-card__number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vermilion);
+  letter-spacing: 0.05em;
+}
+
+.project-card__line {
+  width: 1px;
+  flex: 1;
+  background: var(--divider);
+  margin-top: 16px;
+  min-height: 40px;
+}
+
+/* ─── Body ─── */
+.project-card__body {
+  padding-right: 24px;
+}
+
+.project-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.project-card:hover .project-card__title {
+  color: var(--vermilion);
+}
+
+.project-card__description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--grey);
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+/* ─── Footer Row ─── */
+.project-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-card__tags li {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding: 6px 14px;
+  border: 1px solid var(--divider);
+  transition:
+    border-color 0.3s,
+    color 0.3s;
+}
+
+.project-card:hover .project-card__tags li {
+  border-color: rgba(23, 23, 23, 0.25);
+}
+
+.project-card__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.project-card__status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--grey);
+  opacity: 0.75;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
+  }
+
+  .project-card__header {
+    flex-direction: row;
+    gap: 12px;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .project-card__line {
+    height: 1px;
+    width: auto;
+    flex: 1;
+    min-height: auto;
+    margin-top: 0;
+  }
+
+  .project-card__body {
+    padding-right: 0;
+  }
+
+  .project-card__description {
+    font-size: 16px;
+  }
+
+  .project-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

@@ -76,11 +76,18 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'CollegeClubEvent',
-    description:
-      'A web application for college club events. The detailed feature list will be added once it is documented.',
-    tags: ['Web Development'],
-    statusNote: 'Live demo coming soon',
+    title: "JanSetu",
+  description:
+    "A platform that simplifies government scheme discovery, loan assistance, and DBT failure guidance.",
+  technologies: [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Node.js",
+    "Express",
+    "Supabase"
+  ],
+  liveLink: "https://jansetu-eta-plum.vercel.app",
   },
   {
     title: 'Daily Quote API',

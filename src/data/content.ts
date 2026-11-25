@@ -78,21 +78,6 @@ export interface Project {
 export const PROJECTS: Project[] = [
 
   {
-    title: 'JanSetu',
-    description:
-      'A platform that simplifies government scheme discovery, loan assistance, and DBT failure guidance.',
-    tags: [
-      'React',
-      'Vite',
-      'Tailwind CSS',
-      'Node.js',
-      'Express',
-      'Supabase',
-    ],
-    liveUrl: 'https://jansetu-eta-plum.vercel.app',
-    liveLabel: 'View Live Project',
-  },
-  {
     title: 'Daily Quote API',
     description:
       'A serverless API built using JavaScript and Node.js that returns a random inspirational quote and its author in JSON format.',

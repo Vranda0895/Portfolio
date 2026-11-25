@@ -20,8 +20,7 @@ export const PERSON = {
  *   2. Set RESUME_URL below to '/Vranda-Agarwal-Resume.pdf'
  * While RESUME_URL is empty, a clearly marked placeholder is shown.
  */
-export const RESUME_URL = '/Vranda-Agarwal-Resume.pdf';
-/* ─── Contact ──────────────────────────────────────────────
+export const RESUME_URL = '/resume.pdf';/* ─── Contact ──────────────────────────────────────────────
  * Verified details only. No LinkedIn profile has been provided,
  * so none is shown. Add one here when you have it:
  *   { label: 'LinkedIn', value: 'linkedin.com/in/…', href: 'https://…' }

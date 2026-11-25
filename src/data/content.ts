@@ -20,7 +20,8 @@ export const PERSON = {
  *   2. Set RESUME_URL below to '/Vranda-Agarwal-Resume.pdf'
  * While RESUME_URL is empty, a clearly marked placeholder is shown.
  */
-export const RESUME_URL = '/resume.pdf';/* ─── Contact ──────────────────────────────────────────────
+export const RESUME_URL = '/Vranda-Agarwal-Resume.pdf';
+/* ─── Contact ──────────────────────────────────────────────
  * Verified details only. No LinkedIn profile has been provided,
  * so none is shown. Add one here when you have it:
  *   { label: 'LinkedIn', value: 'linkedin.com/in/…', href: 'https://…' }
@@ -75,19 +76,21 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+
   {
-    title: "JanSetu",
-  description:
-    "A platform that simplifies government scheme discovery, loan assistance, and DBT failure guidance.",
-  technologies: [
-    "React",
-    "Vite",
-    "Tailwind CSS",
-    "Node.js",
-    "Express",
-    "Supabase"
-  ],
-  liveLink: "https://jansetu-eta-plum.vercel.app",
+    title: 'JanSetu',
+    description:
+      'A platform that simplifies government scheme discovery, loan assistance, and DBT failure guidance.',
+    tags: [
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'Node.js',
+      'Express',
+      'Supabase',
+    ],
+    liveUrl: 'https://jansetu-eta-plum.vercel.app',
+    liveLabel: 'View Live Project',
   },
   {
     title: 'Daily Quote API',
